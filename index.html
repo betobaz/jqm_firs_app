@@ -1,12 +1,11 @@
 <!DOCTYPE html> 
-<html> 
+<html class="ui-mobile"> 
 <head> 
 	<title>Page Title</title> 
 	<base href="http://localhost:8080/">
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-
-	<link rel="stylesheet" href="css/themes/betobaz.min.css" />
-	<link href="/css/jquery.mobile.custom.structure.min.css" rel="stylesheet">
+	
+	<link href="http://jquerymobile.com/test/css/themes/default/jquery.mobile.css" rel="stylesheet">
 	<link href="/css/jqm-docs.css" rel="stylesheet">
 	<script src="/js/jquery-1.8.2.min.js"></script>
 	<script src="/js/jquery.mobile.custom.min.js"></script>
@@ -15,14 +14,36 @@
 
 <div data-role="page" class="type-interior ui-page ui-body-c ui-page-active">
 
-	<div data-role="header">
+	<div data-role="header" data-theme="f">
 		<h1>Rutas</h1>
 		<a href="index.html" data-icon="gear" class="ui-btn-right ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-left ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Options</span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></a>
 	</div><!-- /header -->
 	
-	<div data-role="content">	
-		<div class="content-primary">Primario</div>
-		<div class="content-secondary">Secundario</div>
+	<div data-role="content" class="ui-content">	
+		<div class="content-primary">
+			<h2>Toolbars: Headers &amp; Footers</h2>
+			<p>Toolbar page elements are used for <a href="docs-headers.html" class="ui-link">headers</a> and <a href="docs-footers.html" class="ui-link">footers</a> throughout many mobile sites and applications. These scroll with the page by default, but can have <a href="bars-fixed.html" class="ui-link">fixed positioning</a> and be <a href="footer-persist-a.html" class="ui-link">persistent</a> across pages.</p>
+			<p>jQuery Mobile also provides a <a href="docs-navbar.html" class="ui-link">navbar</a> component that can be used within any toolbar or the page content.</p>
+      </div>
+		<div class="content-secondary">
+			<div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
+
+					<h3>More in this section</h3>
+
+					<ul data-role="listview" data-theme="c" data-dividertheme="d">
+
+						<li data-role="list-divider">Toolbars</li>
+						<li data-theme="a"><a href="docs-bars.html">Toolbar basics</a></li>
+						<li><a href="docs-headers.html">Header bars</a></li>
+						<li><a href="docs-footers.html">Footer bars</a></li>
+						<li><a href="docs-navbar.html">Navbars</a></li>
+						<li><a href="bars-fixed.html">Fixed positioning</a></li>
+						<li><a href="footer-persist-a.html">Persistent toolbars</a></li>
+						<li><a href="bars-themes.html">Theming toolbars</a></li>
+
+					</ul>
+			</div>
+		</div>
 	</div><!-- /content -->
 
 	<div data-role="footer">
