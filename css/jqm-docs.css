@@ -3,7 +3,9 @@
 Beware: lots of last-minute CSS going on in here 
 cobblers, shoes, 
 */
-
+html, body{
+	height: 100%;
+}
 body { background: #f9f9f9; padding:13px; }
 body.ui-mobile-viewport { padding: 0; }
 body, input, textarea, select, button { font-family: Helvetica, Arial, san-serif; }
@@ -270,6 +272,26 @@ dd h4 { margin:15px 0 0 0; }
 	text-decoration: none;
 }
 
+#map-page {
+    height : 100%;
+}
+#map-page .ui-header {
+    height : 40px;
+}
+#map-page .ui-content {
+    position : absolute;
+    top      : 40px;
+    right    : 0;
+    bottom   : 30px;
+    left     : 0;
+}
+#map-page .ui-footer {
+    position : absolute;
+    bottom   : 0;
+    left     : 0;
+    width    : 100%;
+    height   : 30px;
+}
 
 /* docs site layout */
 
@@ -352,7 +374,7 @@ dd h4 { margin:15px 0 0 0; }
 		left: -9999px;
 	}
 	.type-interior .content-primary {
-		padding: 1.5em 6% 3em 0;
+		padding: 0;
 		margin: 0;
 	}
 	/* fix up the collapsibles - expanded on desktop */
@@ -393,7 +415,7 @@ dd h4 { margin:15px 0 0 0; }
 		width: 34%;
 	}
 	.content-primary {
-		width: 56%;
+		width: 66%;
 		padding-right: 1%;
 	}
 }
