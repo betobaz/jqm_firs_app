@@ -1,51 +1,97 @@
 <!DOCTYPE html> 
 <html class="ui-mobile"> 
-<head> 
-	<title>Page Title</title> 
-	<base href="http://localhost:8080/">
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-	<script src="http://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>
-	<link rel="stylesheet" href="/css/jquery.mobile-1.2.0.min.css" />
+    <head> 
+        <title>Page Title</title> 
+        <base href="http://localhost:8080/">
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
 
-	<link href="/css/jqm-docs.css" rel="stylesheet">
-	<script src="/js/jquery-1.8.2.min.js"></script>
-	<script src="/js/jquery.mobile.custom.min.js"></script>
-	<script src="/js/jquery.ui.map.full.min.js"></script>
+        <link type="text/css" rel="stylesheet" media="screen" href="/css/sidetap.css" />
 
-</head> 
-<body class="ui-mobile-viewport ui-overlay-c"> 
+        <link type="text/css" rel="stylesheet" media="screen" href="/css/theme/default/default.css" />
+        <link type="text/css" rel="stylesheet" media="screen" href="/css/jquery.mobile-1.2.0.min.css" />
+        <script src="/js/lib/require.js" data-main="js/mobile"></script>
 
-<div data-role="page" id="map-page" class="type-interior ui-page ui-body-c ui-page-active">
+    </head> 
+    <body>
+        <div class="sidetap">
+            <div class="stp-nav">
+                <div>
+                    <nav>
+                    <a href="#" class="selected">Agenda</a>
+                    <a href="#">Clientes</a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    </nav>
+                </div>
+            </div>
 
-	<div data-role="header"  data-theme="f">
-		<h1>Rutas</h1>
-		<a href="index.html" data-icon="gear" class="ui-btn-right ui-btn ui-shadow ui-btn-corner-all ui-btn-icon-left ui-btn-up-a" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="a"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Options</span><span class="ui-icon ui-icon-gear ui-icon-shadow">&nbsp;</span></span></a>
-	</div><!-- /header -->
-	
-	<div data-role="content" class="ui-content">	
-		<div class="content-primary">
-			<div id="map_canvas" style="width:100%;height:250px"></div>	
-      	</div>
-		<div class="content-secondary">
-			<div data-role="collapsible" data-collapsed="true" data-theme="b" data-content-theme="d">
+            <div class="stp-content" id="content">
+                <header class="stp-fake-header">&nbsp;</header>
+                <div class="stp-overlay nav-toggle">&nbsp;</div>
 
-					<h3>Men&uacute;</h3>
+                <!-- Content Divs Look Like This -->
+                <div class="stp-content-panel">
+                    <header>
+                    <a href="javascript:void(0)" class="header-button icon menu"><span>Menu</span></a>
+                    <a href="javascript:void(0)" class="header-button icon info right"><span>Info</span></a>
+                    <h1>Agenda</h1>                    
+                    </header>
+                    <div class="stp-content-frame">
+                        <div class="stp-content-body">
+                            <div>
+                                <div id="visitas" data-role="page" data-title="Agenda">
+  
+                                      <div data-role="header">
+                                            <h1>Agenda</h1>
+                                      </div><!-- /header -->
+                                  
+                                      <div data-role="content">                                            
+                                            <ul data-role="listview" data-inset="false">         
+                                                  <li><a href="#category?animals" class="animals">Animals</a></li>
+                                                  <li><a href="#category?colors" class="colors">Colors</a></li>
+                                                  <li><a href="#category?vehicles" class="vehicles">Vehicles</a></li>
+                                            </ul>
+                                      </div><!-- /content -->
 
-					<ul data-role="listview" data-theme="c" data-dividertheme="d">
+                                </div>
 
-		
-						<li data-theme="a"><a href="index.html">Ruta</a></li>
-						<li><a href="clientes.html" data-transition="slide">Clientes</a></li>				
-					</ul>
-			</div>
-		</div>
-	</div><!-- /content -->
+                                <div id="accounts" data-role="page" data-title="Clientes">
+  
+                                      <div data-role="header">
+                                            <h1>Agenda</h1>
+                                      </div><!-- /header -->
+                                  
+                                      <div data-role="content">                                            
+                                            <ul data-role="listview" data-inset="false">         
+                                                  <li><a href="#category?animals" class="animals">Animals</a></li>
+                                                  <li><a href="#category?colors" class="colors">Colors</a></li>
+                                                  <li><a href="#category?vehicles" class="vehicles">Vehicles</a></li>
+                                            </ul>
+                                      </div><!-- /content -->
 
-	<div data-role="footer" class="ui-footer ui-bar-a">
-		<h4>Powered by Merxbp</h4>
-	</div><!-- /footer -->
-</div><!-- /page -->
-<script type="text/javascript" src="js/index.js"></script>
-</body>
+                                </div>                                
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End content Div -->
+            </div>
+        </div>                
+
+        <script id="visitaItems" type="text/template">
+
+              <% _.each( collection.toJSON(), function( category, id ) { %>
+
+                    <li class="ui-li ui-li-static ui-btn-up-c ui-corner-top">
+                          <%= category.type %>
+                    </li>
+
+              <% }); %>
+
+        </script>
+    </body>
 </html>
 
