@@ -8,7 +8,8 @@ require.config( {
             "jquerymobile": "lib/jquery.mobile.custom.min",
             "underscore": "lib/underscore-min",
             "backbone": "lib/backbone",
-            "sidetap": "lib/sidetap.min"
+            "sidetap": "lib/sidetap.min",
+            "app" : "App" ,             
         },
 
         // Sets the configuration for your third party scripts that are not AMD compatible
@@ -25,22 +26,32 @@ require.config( {
 
       // Includes File Dependencies      
 
-      require([ "jquery","backbone", "sidetap", 
-        //"routers/mobileRouter",
-        "jquerymobile" ], function( $, Backbone, Mobile ) {
+      require([ "jquery","backbone", "sidetap", "app",  ], function( $,  Backbone, Sidetap, App ) {
+        
 
-        // Prevents all anchor click handling
-        $.mobile.linkBindingEnabled = false;
+        //require(["visitaModel", "visitasCollection", "visitaView"], function(){
+            require(["routers/mobileRouter"], function(Mobile){
+                $(document).on("mobileinit",
+                    // Set up the "mobileinit" handler before requiring jQuery Mobile's module
+                    function() {
+                        // Prevents all anchor click handling including the addition of active button state and alternate link bluring.
+                        $.mobile.linkBindingEnabled = false;
 
-        // Disabling this will prevent jQuery Mobile from handling hash changes
-        $.mobile.hashListeningEnabled = false;
+                        // Disabling this will prevent jQuery Mobile from handling hash changes
+                        $.mobile.hashListeningEnabled = false;
 
-        var st = sidetap();
-        $(".header-button.menu").on("click",st.toggle_nav);
+                        var st = sidetap();
+                        $(".header-button.menu").on("click",st.toggle_nav);
+                    });
 
-        // Instantiates a new Backbone.js Mobile Router
-        this.router = new Mobile();  
+                    require(["jquerymobile"], function() {
+                        // Instantiates a new Backbone.js Mobile Router
+                        this.router = new Mobile();
+                    });    
+            });
+        //});
 
+        
         
 
       } );
