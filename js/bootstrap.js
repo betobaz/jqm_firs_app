@@ -8,7 +8,7 @@ require({
     //underscore: 'js/libs/underscore-min',
     underscore: 'js/libs/underscore',
     backbone: 'js/libs/backbone',
-    //sidetap: 'js/libs/sidetap.min',
+    sidetap: 'js/libs/sidetap.min',
     'jquery.mobile.router': 'js/libs/jquery.mobile.router'
   }
 }, [
@@ -22,8 +22,8 @@ require({
   $(function(){
 
   });
-  /*require([ "jquery","sidetap" ], function( $,  Sidetap) {
+  require([ "jquery","sidetap" ], function( $,  Sidetap) {
     var st = sidetap();
     $(".header-button.menu").on("click",st.toggle_nav);
-  });*/
+  });
 });

@@ -4,30 +4,30 @@
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-  define(['underscore', 'backbone', 'text!templates/list-accounts.html'], function(_, Backbone, tmpl) {
-    var ListAccountsView;
-    ListAccountsView = (function(_super) {
+  define(['underscore', 'backbone', 'text!templates/list-visits.html'], function(_, Backbone, tmpl) {
+    var ListVisitsView;
+    ListVisitsView = (function(_super) {
 
-      __extends(ListAccountsView, _super);
+      __extends(ListVisitsView, _super);
 
-      function ListAccountsView() {
+      function ListVisitsView() {
         this.render = __bind(this.render, this);
-        return ListAccountsView.__super__.constructor.apply(this, arguments);
+        return ListVisitsView.__super__.constructor.apply(this, arguments);
       }
 
-      ListAccountsView.prototype.el = '#page-list-accounts';
+      ListVisitsView.prototype.el = '#page-list-visits';
 
-      ListAccountsView.prototype.template = _.template(tmpl);
+      ListVisitsView.prototype.template = _.template(tmpl);
 
-      ListAccountsView.prototype.render = function() {
+      ListVisitsView.prototype.render = function() {
         $(this.el).html(this.template());
         return this;
       };
 
-      return ListAccountsView;
+      return ListVisitsView;
 
     })(Backbone.View);
-    return ListAccountsView;
+    return ListVisitsView;
   });
 
 }).call(this);

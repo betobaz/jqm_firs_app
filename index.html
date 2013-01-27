@@ -10,18 +10,22 @@
         <link type="text/css" rel="stylesheet" media="screen" href="/css/theme/default/default.css" />
         <link type="text/css" rel="stylesheet" media="screen" href="/css/jquery.mobile-1.2.0.min.css" />
         <!--<script src="/js/lib/require.js" data-main="js/mobile"></script>-->
-        <script src="/js/libs/sidetap.min.js"></script>
-        <script src="/js/libs/require.js"></script>
+         <script>
+            curl = {
+              apiName: 'require'
+            };
+          </script>
+        <script src="/js/libs/amd/require.js"></script>
         <script src="/js/bootstrap.js"></script>
 
     </head> 
     <body>
-        <!--<div class="sidetap">
+        <div class="sidetap">
             <div class="stp-nav">
                 <div>
                     <nav>
-                    <a href="#" class="selected">Agenda</a>
-                    <a href="#">Clientes</a>                    
+                    <a href="#/list-visits" class="selected">Agenda</a>
+                    <a href="#/list-accounts">Clientes</a>                    
                     </nav>
                 </div>
             </div>
@@ -30,26 +34,26 @@
                 <header class="stp-fake-header">&nbsp;</header>
                 <div class="stp-overlay nav-toggle">&nbsp;</div>
 
-                
+                <!-- Content Divs Look Like This -->
                 <div class="stp-content-panel">
                     <header>
                     <a href="javascript:void(0)" class="header-button icon menu"><span>Menu</span></a>
-                    <a href="javascript:void(0)" class="header-button icon info right"><span>Info</span></a>
+                    <a href="#/map" class="header-button icon info right"><span>Info</span></a>
                     <h1>Agenda</h1>                    
                     </header>
                     <div class="stp-content-frame">
                         <div class="stp-content-body">
-                            <div>-->
-                                <div data-role="page" id="one" data-url="/one"> </div>
-                                <div data-role="page" id="two" data-url="/two"> </div>                                  
-                            <!--</div>
+                            <div>
+                                <div data-role="page" id="page-list-visits" data-url="/list-visits"></div>
+                                <div data-role="page" id="page-list-accounts" data-url="/list-accounts"></div>
+                                <div data-role="page" id="page-map" data-url="/map"></div>                            
+                            </div>
                         </div>
                     </div>
                 </div>
-                
+                <!-- End content Div -->
             </div>
-        </div>-->
-                        
+        </div>                      
     </body>
 </html>
 

@@ -1,28 +1,28 @@
 define([
   'jquery',
   'underscore',
-  'backbone',
-  'js/views/OneView'
-  ,'js/views/TwoView'
-  //,
-  //,'js/views/PopupView'
-], function($, _, Backbone, OneView, TwoView, PopupView){
-  new $.mobile.Router({
-    "/one":   { handler: 'one', events: "bc" },
-    "/two":   { handler: 'two', events: "bc" },
-    "/popup": { handler: 'popup', events: "bc" }
-  }, {
-    one: function(){
-      new OneView().render();
+  'backbone'
+  ,'js/views/ListAccountsView'
+  ,'js/views/MapView'
+  ,'js/views/ListVisitsView'
+], function($, _, Backbone, ListAccountsView, MapView, ListVisitsView){
+  new $.mobile.Router({  
+    "/list-accounts": { handler: 'list-accounts', events: "bc" }    
+    ,"/list-visits": { handler: 'list-visits', events: "bc" }
+    ,"/map": { handler: 'map', events: "bc" }
+  }, {    
+
+    'list-accounts': function(){
+      new ListAccountsView().render();
     },
 
-    two: function(){
-      new TwoView().render();
+    'list-visits': function(){
+      new ListVisitsView().render();
     },
 
-    /*popup: function(){
-      new PopupView().render();
-    },*/
+    'map': function(){
+      new MapView().render();
+    },
 
     'default': function(){
       console.log('No route found.');
