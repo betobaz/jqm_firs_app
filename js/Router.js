@@ -2,9 +2,10 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'js/views/OneView',
-  'js/views/TwoView',
-  'js/views/PopupView'
+  'js/views/OneView'
+  ,'js/views/TwoView'
+  //,
+  //,'js/views/PopupView'
 ], function($, _, Backbone, OneView, TwoView, PopupView){
   new $.mobile.Router({
     "/one":   { handler: 'one', events: "bc" },
@@ -19,9 +20,9 @@ define([
       new TwoView().render();
     },
 
-    popup: function(){
+    /*popup: function(){
       new PopupView().render();
-    },
+    },*/
 
     'default': function(){
       console.log('No route found.');
