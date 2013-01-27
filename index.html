@@ -9,7 +9,10 @@
 
         <link type="text/css" rel="stylesheet" media="screen" href="/css/theme/default/default.css" />
         <link type="text/css" rel="stylesheet" media="screen" href="/css/jquery.mobile-1.2.0.min.css" />
-        <script src="/js/lib/require.js" data-main="js/mobile"></script>
+        <!--<script src="/js/lib/require.js" data-main="js/mobile"></script>-->
+        <script src="/js/libs/sidetap.min.js"></script>
+        <script src="/js/libs/require.js"></script>
+        <script src="/js/bootstrap.js"></script>
 
     </head> 
     <body>
@@ -18,9 +21,7 @@
                 <div>
                     <nav>
                     <a href="#" class="selected">Agenda</a>
-                    <a href="#">Clientes</a>
-                    <a href="#"></a>
-                    <a href="#"></a>
+                    <a href="#">Clientes</a>                    
                     </nav>
                 </div>
             </div>
@@ -39,68 +40,16 @@
                     <div class="stp-content-frame">
                         <div class="stp-content-body">
                             <div>
-                                <div id="page-visitas" data-role="page" data-title="Agenda">
-  
-                                      <div data-role="header">
-                                            <h1>Agenda</h1>
-                                      </div><!-- /header -->
-                                  
-                                      <div data-role="content">                                            
-                                            <ul data-role="listview" data-inset="false">         
-                                                  <li><a href="#visita?agenda" class="animals">Agenda</a></li>
-                                                  <li><a href="#visita?accounts" class="colors">Clientes</a></li>
-                                                  <li><a href="#visita?mapa" class="vehicles">Mapa</a></li>
-                                            </ul>
-                                      </div><!-- /content -->
-
-                                </div>
-
-                                <div id="page-accounts" data-role="page" data-title="Clientes">
-  
-                                      <div data-role="header">
-                                            <h1>Clientes</h1>
-                                      </div><!-- /header -->
-                                  
-                                      <div data-role="content">                                            
-                                            aqui van los clientes
-                                      </div><!-- /content -->
-
-                                </div>
-
-                                <div id="page-map" data-role="page" data-title="Mapa">
-  
-                                      <div data-role="header">
-                                            <h1>Mapa</h1>
-                                      </div><!-- /header -->
-                                  
-                                      <div data-role="content">  
-                                        aqui va el mapa                                          
-                                        <div id="map" ></div>
-                                      </div><!-- /content -->
-
-                                </div>                                
-
-
-
+                                <div id="page-list-visitas" data-role="page" data-title="visitas"></div>
+                                <div id="page-list-accounts" data-role="page" data-title="Clientes"></div>
+                                <div id="page-mapa" data-role="page" data-title="Mapa"></div>                                
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- End content Div -->
             </div>
-        </div>                
-
-        <script id="visitaItems" type="text/template">
-
-              <% _.each( collection.toJSON(), function( category, id ) { %>
-
-                    <li class="ui-li ui-li-static ui-btn-up-c ui-corner-top">
-                          <%= category.type %>
-                    </li>
-
-              <% }); %>
-
-        </script>
+        </div>                      
     </body>
 </html>
 
