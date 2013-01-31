@@ -1,3 +1,6 @@
-define ["jquery", "backbone", "../models/VisitaModel"], ($, Backbone, Model) ->
-	class Visitas.Collections.VisitasCollection extends Backbone.Collection
-		model: Model
+define ["jquery", "backbone", "../models/VisitaModel"], ($, Backbone, VisitaModel) ->
+	class VisitasCollection extends Backbone.Collection
+				
+		model: VisitaModel		
+
+	VisitasCollection

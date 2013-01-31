@@ -4,7 +4,8 @@
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   define(["jquery", "backbone"], function($, Backbone) {
-    return Visitas.Models.VisitaModel = (function(_super) {
+    var VisitaModel;
+    VisitaModel = (function(_super) {
 
       __extends(VisitaModel, _super);
 
@@ -12,9 +13,19 @@
         return VisitaModel.__super__.constructor.apply(this, arguments);
       }
 
+      VisitaModel.prototype.attributes = {
+        orden: null,
+        date_entered: null,
+        date_due: null,
+        position: null,
+        account_name: null,
+        account_id: null
+      };
+
       return VisitaModel;
 
     })(Backbone.Model);
+    return VisitaModel;
   });
 
 }).call(this);

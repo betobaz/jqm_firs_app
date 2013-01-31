@@ -2,26 +2,26 @@ define([
   'jquery',
   'underscore',
   'backbone'
-  ,'js/views/ListAccountsView'
-  ,'js/views/MapView'
-  ,'js/views/ListVisitsView'
-], function($, _, Backbone, ListAccountsView, MapView, ListVisitsView){
+  ,'js/views/AccountsPageView'
+  ,'js/views/MapPageView'
+  ,'js/views/VisitsPageView'
+], function($, _, Backbone, AccountsPageView, MapPageView, VisitsPageView){
   new $.mobile.Router({  
-    "/list-accounts": { handler: 'list-accounts', events: "bc" }    
-    ,"/list-visits": { handler: 'list-visits', events: "bc" }
-    ,"/map": { handler: 'map', events: "bc" }
+    "accounts": { handler: 'accounts', events: "bc" }    
+    ,"visits": { handler: 'visits', events: "bc" }
+    ,"map": { handler: 'map', events: "bc" }
   }, {    
 
-    'list-accounts': function(){
-      new ListAccountsView().render();
+    'accounts': function(){
+      new AccountsPageView().render();
     },
 
-    'list-visits': function(){
-      new ListVisitsView().render();
+    'visits': function(){
+      new VisitsPageView().render();
     },
 
     'map': function(){
-      new MapView().render();
+      new MapPageView().render();
     },
 
     'default': function(){

@@ -6,9 +6,11 @@ require({
     //jqueryM: 'js/libs/jquery.mobile.custom.min',
     jqueryM: 'js/libs/jquery.mobile-1.0',
     //underscore: 'js/libs/underscore-min',
-    underscore: 'js/libs/underscore',
-    backbone: 'js/libs/backbone',
+    underscore: 'js/libs/underscore-min',
+    backbone: 'js/libs/backbone-min',
     sidetap: 'js/libs/sidetap.min',
+    jqueryUiMap: 'js/libs/jquery.ui.map.full.min',
+    //'jquery.mobile.router': 'js/libs/jquery.mobile.router.min'    
     'jquery.mobile.router': 'js/libs/jquery.mobile.router'
   }
 }, [

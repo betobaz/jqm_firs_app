@@ -1,10 +1,10 @@
-define ['underscore', 'backbone', 'text!templates/list-visits.html'], (_, Backbone, tmpl) ->
+define ['underscore', 'backbone', 'text!templates/list-visits.html', "../views/VisitsPageView"]
 	class ListVisitsView extends Backbone.View
-		el: '#page-list-visits'
+		el: $()
 
-		template: _.template(tmpl)
+		template: _.template 
 
 		render: () =>
-			$(@el).html(@template())
-			@
+			console.log("render")
+
 	ListVisitsView
