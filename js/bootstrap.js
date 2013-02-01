@@ -10,6 +10,7 @@ require({
     backbone: 'js/libs/backbone-min',
     sidetap: 'js/libs/sidetap.min',
     jqueryUiMap: 'js/libs/jquery.ui.map.full.min',
+    hogan: 'js/libs/hogan-2.0.0',
     //'jquery.mobile.router': 'js/libs/jquery.mobile.router.min'    
     'jquery.mobile.router': 'js/libs/jquery.mobile.router'
   }

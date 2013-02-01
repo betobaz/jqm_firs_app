@@ -2,6 +2,11 @@
     <h1>Agenda</h1>
 </div><!-- /header -->
 
-<div data-role="content" id="visits-content">     
-	<h2>Aqui van las visitas programadas</h2>                                          
+<div data-role="content" id="visits-content">	 
+	<ul data-role="listview" data-inset="false">   
+	 	<script type="text/mustache" id="visit-list-item">
+			<li><a href="visit?{{id}}" >{{account_name}}</li>
+		</script>                                       
+	 </ul>
+	
 </div><!-- /content -->
